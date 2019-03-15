@@ -25,13 +25,18 @@ export const reloader = () => {
     },
 
     async writeBundle() {
+      console.count('writeBundle')
       if (!process.env.ROLLUP_WATCH) {
+        console.count('writeBundle not watch')
         return null
       }
 
       if (extPage && browser) {
+        console.count('writeBundle reload')
         // TODO: validate manifest.json before reload
-        return extPage.reload()
+        return extPage.evaluate(() => {
+          chrome.runtime.reload()
+        })
       }
 
       const loaded = await loadExt(extPath)

@@ -1,5 +1,8 @@
-import watch from '@bumble/rollup-watch-next'
 import { rollup } from 'rollup'
+import replace from 'replace-in-file'
+import git from 'simple-git/promise'
+import watch from '@bumble/rollup-watch-next'
+
 import config from '../rollup.config'
 import { browsers } from '../../src/index'
 
@@ -14,16 +17,18 @@ describe('reloader', () => {
 })
 
 describe('reloader watch', () => {
-  beforeEach(() => {
+  let watcher
+
+  beforeAll(() => {
     process.env.ROLLUP_WATCH = 'true'
   })
 
-  afterEach(() => {
-    delete process.env.ROLLUP_WATCH
+  afterAll(() => {
+    process.env.ROLLUP_WATCH = undefined
   })
 
   test('loads without crashing', async () => {
-    const watcher = watch(config)
+    watcher = watch(config)
 
     await watcher.next('END')
 
