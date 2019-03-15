@@ -2,12 +2,12 @@
   "name": "rollup-plugin-chrome-ext-reloader",
   "version": "0.1.1",
   "description": "Reloads your chrome extension.",
+  "repository": "bumble-org/rollup-plugin-chrome-ext-reloader",
   "license": "MIT",
   "author": "Jack and Amy Steam <jacksteamdev@gmail.com>",
   "files": [
     "build"
   ],
-  "repository": "bumble-org/rollup-plugin-chrome-ext-reloader.git",
   "main": "build/bundle-cjs.js",
   "module": "build/bundle-esm.js",
   "scripts": {
@@ -31,13 +31,16 @@
     "node-cleanup": "^2.1.2"
   },
   "devDependencies": {
-    "rollup-plugin-auto-manifest": "^0.3.3",
-    "@bumble/rollup-watch-next": "^0.2.0",
+    "@bumble/rollup-watch-next": "^0.2.1",
     "@sucrase/jest-plugin": "^2.0.0",
-    "eslint": "^5.11.0",
+    "eslint": "^5.15.1",
     "events.once": "^2.0.2",
     "jest": "^24.2.0-alpha.0",
+    "replace-in-file": "^3.4.4",
     "rollup": "^1.6.0",
-    "sucrase": "^3.9.5"
+    "rollup-plugin-auto-manifest": "latest",
+    "rollup-plugin-manifest-entry": "latest",
+    "simple-git": "^1.107.0",
+    "sucrase": "^3.10.0"
   }
 }
