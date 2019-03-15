@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-chrome-ext-reloader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reloads your chrome extension.",
   "repository": "bumble-org/rollup-plugin-chrome-ext-reloader",
   "license": "MIT",
