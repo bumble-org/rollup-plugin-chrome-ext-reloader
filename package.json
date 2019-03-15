@@ -26,6 +26,7 @@
     }
   },
   "dependencies": {
+    "@bumble/chrome-ext-loader": "^0.1.1",
     "nanoid": "^2.0.1",
     "node-cleanup": "^2.1.2"
   },
